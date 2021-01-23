@@ -1,0 +1,26 @@
+{
+  "name": "markdownpedia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "serve": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mamamia5x/markdownpedia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mamamia5x/markdownpedia/issues"
+  },
+  "homepage": "https://github.com/mamamia5x/markdownpedia#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs-extra": "^9.1.0",
+    "markdown": "^0.5.0",
+    "readdirp": "^3.5.0"
+  }
+}
