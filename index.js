@@ -1,11 +1,12 @@
-var markdown = require( "markdown" ).markdown;
+var showdown  = require('showdown');
+converter = new showdown.Converter();
 var fsExtra = require('fs-extra');
 var fs = require('fs');
 var style = fs.readFileSync('vital/style.css') + '';
 
 fsExtra.emptyDirSync('site/html'); 
 var e404 = fs.readFileSync('vital/404.md') + '';
-var html = markdown.toHTML(e404);
+var html = converter.makeHtml(e404);
 html = html + '<style>' + style + '</style>';
 fs.writeFileSync('vital/404.html', html);
 getfiles('site/markdown'); 
@@ -26,7 +27,7 @@ function getfiles(dir){
 
 function convert(file, dir){
   var filename = dir + '/' + file;
-  var content = markdown.toHTML(fs.readFileSync(filename) + '');
+  var content = converter.makeHtml(fs.readFileSync(filename) + '');
   filename = filename.replace('site/markdown', 'site/html');
   filename = filename.replace('.md', '.html');
   var data = content + '<style>' + style + '</style>';

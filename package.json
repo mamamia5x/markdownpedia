@@ -20,7 +20,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "fs-extra": "^9.1.0",
-    "markdown": "^0.5.0",
-    "readdirp": "^3.5.0"
+    "readdirp": "^3.5.0",
+    "showdown": "^1.9.1"
   }
 }
