@@ -26,5 +26,5 @@ npm run serve
 ```
 To convert markdown files to html files run
 ```sh
-npm start
+npm run convert
 ```

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "convert": "node index.js",
     "serve": "node server.js"
   },
   "repository": {
