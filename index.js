@@ -1,5 +1,6 @@
 var showdown  = require('showdown');
 converter = new showdown.Converter();
+var css = 'https://markdownpedia.tk/server/vital/style.css';
 var fsExtra = require('fs-extra');
 var fs = require('fs');
 var style = fs.readFileSync('vital/style.css') + '';
@@ -7,7 +8,7 @@ var style = fs.readFileSync('vital/style.css') + '';
 fsExtra.emptyDirSync('site/html'); 
 var e404 = fs.readFileSync('vital/404.md') + '';
 var html = converter.makeHtml(e404);
-html = html + '<style>' + style + '</style>';
+html = html + `<link rel="stylesheet" href="${css}">`;
 fs.writeFileSync('vital/404.html', html);
 getfiles('site/markdown'); 
 function getfiles(dir){ 
@@ -30,7 +31,7 @@ function convert(file, dir){
   var content = converter.makeHtml(fs.readFileSync(filename) + '');
   filename = filename.replace('site/markdown', 'site/html');
   filename = filename.replace('.md', '.html');
-  var data = content + '<style>' + style + '</style>';
+  var data = content + `<link rel="stylesheet" href="${css}">`;
   checkIfDir(dir.replace('site/markdown', 'site/html'));
   fs.writeFileSync(filename, data);
   console.log('File is ' + file + ' and is in ' + dir);
