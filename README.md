@@ -6,7 +6,6 @@ Then you create a pull request, and bam. You're done. Once a moderator (need som
 ## Running locally
 [<img src="https://gitpod.io/button/open-in-gitpod.svg" width="95" height="20" 
 />](https://gitpod.io/from-referrer/)
-[![Run on Repl.it](https://repl.it/badge/github/mamamia5x/markdownpedia)](https://repl.it/github/mamamia5x/markdownpedia)
 
 You can open it with Gitpod or Repl.it and it'll run on those sites just fine.
 
