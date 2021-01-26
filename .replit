@@ -1,1 +1,1 @@
-run="npm run serve"
+run="node index.js"
