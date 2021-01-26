@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "convert": "node index.js",
-    "serve": "node server.js",
-    "update": "node update.js"
+    "serve": "node server.js"
   },
   "repository": {
     "type": "git",
