@@ -3,7 +3,7 @@ const { exec } = require("child_process");
 var path = require('path');
 var app = express();
 var port = 8000;
-app.use(express.static('site/html'));
+app.use(express.static(path.join(__dirname, 'site/html')));
 app.use('/server/vital', express.static(path.join(__dirname, 'vital/public')))
 app.use(function(req, res, next) {
   res.status(404);
