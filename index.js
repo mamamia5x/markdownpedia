@@ -5,7 +5,8 @@ update();
 
 function update(){
   if (fs.existsSync('markdownpedia')) {
-    command("rm -rf markdownpedia && git clone https://github.com/mamamia5x/markdownpedia.git && node markdownpedia/server.js");
+    command("rm -rf markdownpedia");
+    update();
   }
   else {
     command("git clone https://github.com/mamamia5x/markdownpedia.git && node markdownpedia/server.js");
