@@ -2,24 +2,27 @@
 <html>
   <head>
     <title>Markdownpedia</title>
-    <link rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
-    <link rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
-    <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+    <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
+    <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
   </head>
   <body>
-  <textarea onkeyup="markdown(this.value)" id="text"></textarea>
-  <div id="markdown"></div>
-  <script>
-    function markdown(text){
-      var converter = new showdown.Converter();
-      document.getElementById("markdown").innerHTML = converter.makeHtml(text);
-      document.querySelectorAll('code').forEach(block => {
-        hljs.highlightBlock(block);
-      });
-    }
-  </script>
+    <textarea onkeyup="markdown(this.value)" id="text"></textarea>
+    <div class="markdown" id="markdown"></div>
+    <script>
+      var source = document.getElementById("icon").href.replace("markdownpedia.tk", window.location.hostname);
+      document.getElementById("icon").href = source;
+      source = document.getElementById("style").href.replace("markdownpedia.tk", window.location.hostname);
+      document.getElementById("style").href = source;
+      function markdown(text){
+        var converter = new showdown.Converter();
+        document.getElementById("markdown").innerHTML = converter.makeHtml(text);
+        document.querySelectorAll('code').forEach(block => {
+          hljs.highlightBlock(block);
+        });
+      }
+    </script>
   </body>
 </html>
