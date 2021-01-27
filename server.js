@@ -28,4 +28,5 @@ function site(){
       console.log(`stdout: ${stdout}`);
   });
 }
+site();
 setInterval(site, 600000);
