@@ -9,8 +9,18 @@
     <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
   </head>
   <body>
-    <textarea onkeyup="markdown(this.value)" id="text"></textarea>
-    <div class="markdown" id="markdown"></div>
+    <div style="width: 100%;">
+      <div style="float:left; width: 47.5%;">
+        <textarea class="editor" onkeyup="markdown(this.value)" id="text"></textarea>
+      </div>
+      <div style="position: absolute; left: 49.5%; padding: 0px 0.5%; background-color: #eaecef; height: 98vh;"></div>
+      <div style="float:right; width: 49%;">
+        <div class="markdown" id="markdown"></div>
+      </div>
+    </div>
+    <div style="clear:both">
+
+    </div>
     <script>
       var source = document.getElementById("icon").href.replace("markdownpedia.tk", window.location.hostname);
       document.getElementById("icon").href = source;
