@@ -2,18 +2,24 @@
 <html>
   <head>
     <title>Markdownpedia</title>
-    <link rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
-    <link rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
+    <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
+    <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
     <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
 <body>
-  <div id="markdown">
+  <div class="markdown">
     <h1 id="404">404</h1>
 <p>That page isn't found, go to <a href="https://markdownpedia.tk">home</a>?<br />
 If this is a bug, please share it <a href="https://github.com/mamamia5x/markdownpedia/issues">here</a>.</p>
   </div>
+  <script>
+    var source = document.getElementById("icon").href.replace("markdownpedia.tk", window.location.hostname);
+    document.getElementById("icon").href = source;
+    source = document.getElementById("style").href.replace("markdownpedia.tk", window.location.hostname);
+    document.getElementById("style").href = source;
+  </script>
 </body>
 </html>
