@@ -40,4 +40,5 @@ exec("npm run convert", (error, stdout, stderr) => {
     console.log(`stdout: ${stdout}`);
 });
 }
+site();
 setInterval(site, 600000);
