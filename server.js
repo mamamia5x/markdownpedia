@@ -4,7 +4,8 @@ var path = require('path');
 var app = express();
 var port = 8000;
 app.use(express.static(path.join(__dirname, 'site/html')));
-app.use('/server/vital', express.static(path.join(__dirname, 'vital/public')))
+app.use('/server/vital', express.static(path.join(__dirname, 'vital/public')));
+app.use('/pages/', express.static(path.join(__dirname, 'vital/pages')))
 app.use(function(req, res, next) {
 res.status(404);
 res.sendFile(path.join(__dirname, 'vital', '404.html'));

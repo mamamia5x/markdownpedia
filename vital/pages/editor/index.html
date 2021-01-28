@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdownpedia</title>
     <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
     <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-    <title>Markdownpedia</title>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <script>hljs.initHighlightingOnLoad();</script>
   </head>
-<body>
-  <div class="nav">
+  <body>
+    <div class="nav">
         <ul>
             <li><a href="javascript: window.location = '/';"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
             <li><a href="javascript: window.location = '/server/vital/editor';"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editor</a></li>
@@ -25,11 +23,21 @@
             <li class="search"><input type="text" placeholder=" Search Markdownpedia" class="searchbox"><a href="#" onclick="changeSearchUrl();"> <i class="fa fa-search" aria-hidden="true"></i></a></li>
         </ul>
     </div>
-  <div class="markdown">
-    {markdown}
-  </div>
-  <script>
-    var source = document.getElementById("icon").href.replace("markdownpedia.tk", window.location.hostname);
+    <br>
+    <div style="width: 100%;">
+      <div style="float:left; width: 47.5%;">
+        <textarea class="editor" onkeyup="markdown(this.value)" id="text"></textarea>
+      </div>
+      <div style="position: absolute; left: 49.5%; padding: 0px 0.5%; background-color: #eaecef; height: 98vh;"></div>
+      <div style="float:right; width: 49%;">
+        <div class="markdown" id="markdown"></div>
+      </div>
+    </div>
+    <div style="clear:both">
+
+    </div>
+    <script>
+      var source = document.getElementById("icon").href.replace("markdownpedia.tk", window.location.hostname);
     document.getElementById("icon").href = source;
     source = document.getElementById("style").href.replace("markdownpedia.tk", window.location.hostname);
     document.getElementById("style").href = source;
@@ -37,6 +45,13 @@
     var things = "https://markdownpedia.tk/server/vital/search.js";
     tag.src = things.replace("markdownpedia.tk", window.location.hostname);
     document.getElementsByTagName("head")[0].appendChild(tag);
-  </script>
-</body>
+      function markdown(text){
+        var converter = new showdown.Converter();
+        document.getElementById("markdown").innerHTML = converter.makeHtml(text);
+        document.querySelectorAll('code').forEach(block => {
+          hljs.highlightBlock(block);
+        });
+      }
+    </script>
+  </body>
 </html>

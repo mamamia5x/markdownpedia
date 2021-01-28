@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Markdownpedia</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
     <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
-    <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <title>Markdownpedia</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <script>hljs.initHighlightingOnLoad();</script>
   </head>
 <body>
+  <div class="nav">
+        <ul>
+            <li><a href="javascript: window.location = '/';"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="javascript: window.location = '/server/vital/editor';"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editor</a></li>
+            <li><a href="https://github.com/mamamia5x/markdownpedia/discussions"><i class="fa fa-user-plus" aria-hidden="true"></i> Forum</a></li>
+            <li><a href="https://status.markdownpedia.tk/"><i class="fa fa-signal" aria-hidden="true"></i> Status</a></li>
+            <li><a href="https://github.com/mamamia5x/markdownpedia"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
+            <li class="search"><input type="text" placeholder=" Search Markdownpedia" class="searchbox"><a href="#" onclick="changeSearchUrl();"> <i class="fa fa-search" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
   <div class="markdown">
     <h1 id="markdownpedia">Markdownpedia</h1>
 <p>Hello and welcome to Markdownpedia. This site is still in development.<br />
@@ -23,6 +38,10 @@ The forum is <a href="https://github.com/mamamia5x/markdownpedia/discussions">he
     document.getElementById("icon").href = source;
     source = document.getElementById("style").href.replace("markdownpedia.tk", window.location.hostname);
     document.getElementById("style").href = source;
+    var tag = document.createElement("script");
+    var things = "https://markdownpedia.tk/server/vital/search.js";
+    tag.src = things.replace("markdownpedia.tk", window.location.hostname);
+    document.getElementsByTagName("head")[0].appendChild(tag);
   </script>
 </body>
 </html>

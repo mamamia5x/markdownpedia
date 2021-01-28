@@ -4,7 +4,10 @@ var css = 'https://markdownpedia.tk/server/vital/style.css';
 var fsExtra = require('fs-extra');
 var fs = require('fs');
 
+var search = fs.readFileSync('vital/searchtemplate.html') + '';
 var template = fs.readFileSync('vital/template.html') + '';
+
+var listofFiles = [];
 
 fsExtra.emptyDirSync('site/html'); 
 var e404 = fs.readFileSync('vital/404.md') + '';
@@ -27,6 +30,19 @@ function getfiles(dir){
   }
 }
 
+var i = 0;
+var text = '';
+while (i < listofFiles.length){
+  var replaceText = listofFiles[i].replace('/', '');
+  if (replaceText == ''){
+    replaceText = 'home';
+  }
+  text += "<li><a href='#' onclick='window.location.pathname = \"" + listofFiles[i] + "\";'>" + replaceText + "</a></li>";
+  i ++;
+}
+
+fs.writeFileSync('vital/pages/search/index.html',search.replace('{list}', text));
+
 function convert(file, dir){
   var filename = dir + '/' + file;
   var content = converter.makeHtml(fs.readFileSync(filename) + '');
@@ -35,6 +51,7 @@ function convert(file, dir){
   var data = template.replace('{markdown}', content);
   checkIfDir(dir.replace('site/markdown', 'site/html'));
   fs.writeFileSync(filename, data);
+  listofFiles.push(dir.replace('site/markdown',''));
   console.log('File is ' + file + ' and is in ' + dir);
 }
 function getSecondPart(str) {
