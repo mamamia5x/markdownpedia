@@ -3,6 +3,8 @@ Markdownpedia is a site similar to Wikipedia. All you got to do to edit a page i
 
 Then you create a pull request, and bam. You're done. Once a moderator (need some) approves of it, it'll be added to the site.
 
+You can go to https://status.markdownpedia.tk/ to check the status of the site.
+
 ## Running locally
 [<img src="https://gitpod.io/button/open-in-gitpod.svg" width="95" height="20" 
 />](https://gitpod.io/from-referrer/)
