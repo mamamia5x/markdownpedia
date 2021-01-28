@@ -991,3 +991,121 @@ textarea.editor{
   margin: 0 .2em .25em -1.6em;
   vertical-align: middle;
 }
+
+body {
+  margin: 0;
+  /* background: linear-gradient(to right, rgb(255, 255, 255), rgb(160, 160, 161), rgb(122, 122, 122)); */
+  background-color: white;
+}
+
+.Title {
+  text-align: center;
+  font-family: 'Francois One', sans-serif;
+  font-size: 48px;
+  margin: 29px;
+}
+
+.nav {
+  display: block;
+  /* background: linear-gradient(to right, rgb(100, 100, 100), rgb(71, 71, 71), rgb(46, 46, 46)); */
+  background-color: #1672d9;
+}
+
+.nav li {
+  float: left;
+  padding: 13px 18px;
+  list-style-type: none;
+  font-size: 22px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nav {
+  overflow: auto;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+}
+
+.nav a:hover {
+  color: rgb(0, 0, 0);
+}
+
+.search {
+  position: relative;
+  left: calc(50% - 329px);
+  top: -7px;
+}
+
+.searchbox {
+  height: 31px;
+  width: 263px;
+  border-radius: 33px;
+  border-style: none;
+}
+
+.contentbox {
+  display: inline-block;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  position: relative;
+  top: 50px;
+  left: 20px;
+  color: red;
+}
+
+.contentbox li {
+  list-style-type: none;
+  padding: 16px 55px;
+  border: 2px solid black;
+  background: linear-gradient(to right, rgb(100, 100, 100), rgb(71, 71, 71), rgb(46, 46, 46));
+  border-radius: 14px;
+  margin: 9px;
+}
+
+.contentbox a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.contentbox a:hover {
+  color: red;
+}
+
+.imgbox {
+  position: relative;
+  top: -292px;
+  left: 412px;
+  border: 2px solid black;
+  height: 343px;
+  width: 889px;
+  text-align: center;
+  background-image: url();
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 9px;
+}
+
+.para {
+  position: relative;
+  top: -190px;
+}
+
+#topic1 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#topic2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#topic3 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#topic4 {
+  font-family: Arial, Helvetica, sans-serif;
+}
