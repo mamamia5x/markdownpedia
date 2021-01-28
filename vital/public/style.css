@@ -3,6 +3,9 @@ textarea.editor{
   height: 90vh;
 }
 
+.markdown{
+  border-left: 10px solid transparent;
+}
 .markdown .octicon {
   display: inline-block;
   fill: currentColor;
