@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
+    <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <title>Markdownpedia</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            /* background: linear-gradient(to right, rgb(255, 255, 255), rgb(160, 160, 161), rgb(122, 122, 122)); */
+            background-color: white;
+        }
+
+        .Title {
+            text-align: center;
+            font-family: 'Francois One', sans-serif;
+            font-size: 48px;
+            margin: 29px;
+        }
+
+        .nav {
+            display: block;
+            background: linear-gradient(to right, rgb(100, 100, 100), rgb(71, 71, 71), rgb(46, 46, 46));
+        }
+
+        .nav li {
+            float: left;
+            padding: 13px 18px;
+            list-style-type: none;
+            font-size: 22px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .nav {
+            overflow: auto;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: 200;
+        }
+
+        .nav a:hover {
+            color: rgb(0, 0, 0);
+        }
+
+        .search {
+            position: relative;
+            left: 609px;
+            top: -7px;
+        }
+
+        .searchbox {
+            height: 31px;
+            width: 263px;
+            border-radius: 33px;
+        }
+
+        .contentbox {
+            display: inline-block;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            position: relative;
+            top: 50px;
+            left: 20px;
+            color: red;
+
+        }
+
+        .contentbox li {
+            list-style-type: none;
+            padding: 16px 55px;
+            border: 2px solid black;
+            background: linear-gradient(to right, rgb(100, 100, 100), rgb(71, 71, 71), rgb(46, 46, 46));
+            border-radius: 14px;
+            margin: 9px;
+        }
+
+
+
+        .contentbox a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+
+        }
+
+        .contentbox a:hover {
+            color: red;
+        }
+
+        .imgbox {
+            position: relative;
+            top: -292px;
+            left: 412px;
+            border: 2px solid black;
+            height: 343px;
+            width: 889px;
+            text-align: center;
+            background-image: url();
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 9px;
+        }
+
+        .para {
+            position: relative;
+            top: -190px;
+        }
+
+        #topic1 {
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+
+        #topic2 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #topic3 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #topic4 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="javascript: window.location = '/';"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="javascript: window.location = '/server/vital/editor';"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editor</a></li>
+            <li><a href="https://github.com/mamamia5x/markdownpedia/discussions"><i class="fa fa-user-plus" aria-hidden="true"></i> Forum</a></li>
+            <li><a href="https://status.markdownpedia.tk/"><i class="fa fa-signal" aria-hidden="true"></i> Status</a></li>
+            <li class="search"><input type="text" placeholder=" Search Markdownpedia" class="searchbox"><a href="https://github.com/mamamia5x/markdownpedia/discussions"> <i class="fa fa-search" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+    <br>
+    <div class="markdown">
+      {markdown}
+  </div>
+  <script>
+    hljs.initHighlightingOnLoad();
+    var source = document.getElementById("icon").href.replace("markdownpedia.tk", window.location.hostname);
+    document.getElementById("icon").href = source;
+    source = document.getElementById("style").href.replace("markdownpedia.tk", window.location.hostname);
+    document.getElementById("style").href = source;
+  </script>
+
+</body>
+
+</html>
