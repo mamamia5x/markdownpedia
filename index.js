@@ -1,5 +1,7 @@
 var showdown  = require('showdown');
-converter = new showdown.Converter();
+converter = new showdown.Converter({tables: 'true', simplifiedAutoLink: 'true'});
+// converter = converter.setOption('tables', 'true')
+// converter = converter.setOption('simplifiedAutoLink','true');
 var css = 'https://markdownpedia.tk/server/vital/style.css';
 var fsExtra = require('fs-extra');
 var fs = require('fs');

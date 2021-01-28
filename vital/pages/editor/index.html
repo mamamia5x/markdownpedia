@@ -46,7 +46,7 @@
     tag.src = things.replace("markdownpedia.tk", window.location.hostname);
     document.getElementsByTagName("head")[0].appendChild(tag);
       function markdown(text){
-        var converter = new showdown.Converter();
+        var converter = new showdown.Converter({tables: 'true', simplifiedAutoLink: 'true'});
         document.getElementById("markdown").innerHTML = converter.makeHtml(text);
         document.querySelectorAll('code').forEach(block => {
           hljs.highlightBlock(block);
