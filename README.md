@@ -1,3 +1,5 @@
+<img alt="HTML5" src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/><img alt="CSS3" src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/><img alt="JavaScript" src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/><img alt="NodeJS" src="https://img.shields.io/badge/node.js%20-%2343853D.svg?&style=for-the-badge&logo=node.js&logoColor=white"/><img alt="Markdown" src="https://img.shields.io/badge/markdown-%23000000.svg?&style=for-the-badge&logo=markdown&logoColor=white"/><img alt="Repl.it" src="https://img.shields.io/badge/Repl.it%20-%230D101E.svg?&style=for-the-badge&logo=Repl.it&logoColor=white"/>![GitHub last commit (branch)](https://img.shields.io/github/last-commit/mamamia5x/markdownpedia/main?style=for-the-badge)
+
 # Markdownpedia
 Markdownpedia is a site similar to Wikipedia. All you got to do to edit a page is go to site/markdown and edit/add a page.
 
@@ -38,11 +40,29 @@ To convert markdown files to html files run
 npm run convert
 ```
 
-## Contributing
-If you wish to contribute to Markdownpedia. There are 2 types of contributions, site and markdown.
+## Adding Pages to the Site
+1. Go to https://github.com/mamamia5x/markdownpedia and fork it.  
+  a. Go to your forked repository.
+2. In your forked repository, go to the _site_ folder.
 
-### Site
-Site contributions are done to the back-end if you will. This stuff is never seen by going to the site, but it is what makes the site work. An example would be updating the template.html file.
+  <img src="https://github.com/mamamia5x/markdownpedia/blob/main/img/tut1.jpg?raw=true" width=500/>
 
-### Markdown
-Markdown changes are changes down to site/markdown files. These files make up the site, which we all see. 
+3. Then go to  the _markdown_ folder.
+
+  <img src="https://github.com/mamamia5x/markdownpedia/blob/main/img/tut2.jpg?raw=true" width=500/>
+
+4. Here press _Add file_.  
+
+  <img src="https://github.com/mamamia5x/markdownpedia/blob/main/img/tut3.jpg?raw=true" width=500/>
+
+
+  a. Press _Create new file_
+5. At the _Name of your file_, type in the name of the article. Then type /index.md
+
+  <img src="https://github.com/mamamia5x/markdownpedia/blob/main/img/tut4.jpg?raw=true" width=500/>
+
+
+6. Add a new tab and go to [the editor](https://markdownpedia.tk/pages/editor/) and type in the files content.
+7. Copy the text and paste in the other GitHub tab.
+8. Press _Propose new file_ and then press _Create Pull Request_.
+9. Your file will be reviewed and then added if there is no issue.
