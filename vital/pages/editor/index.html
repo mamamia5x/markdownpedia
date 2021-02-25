@@ -104,7 +104,8 @@ btn2.onclick=function fileOpen(){
     //storing/displaying the textarea 
     document.getElementById("text").value= filetext;
 
-
+    //calling the function to convert the data from the localfile
+    markdown(filetext);
   };
 
   fileReader.readAsText(fileToRead,"UTF-8");
