@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "convert": "node index.js",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "validate": "prettier --check .",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
