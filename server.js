@@ -23,7 +23,7 @@ app.use('/pages/', express.static(path.join(__dirname, 'vital/pages')));
 /**
  * Handling 404 Errors and Displaying 404 Page
  */
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     res.status(404);
     res.sendFile(path.join(__dirname, 'vital', '404.html'));
 });
@@ -31,7 +31,7 @@ app.use(function (req, res, next) {
 /**
  * Server listening
  */
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), function() {
     console.log(`
     Now listening on port ${port}
     Go to http://localhost:${port}
