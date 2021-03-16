@@ -1,110 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>Markdownpedia - Home</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Markdownpedia is a site similar to Wikipedia but is written in Markdown. It is open-source, and you can help contribute to this site."
+        />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Markdownpedia is a site similar to Wikipedia but is written in Markdown. It is open-source, and you can help contribute to this site.">
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://markdownpedia.tk/">
-    <meta property="og:title" content="Markdownpedia">
-    <meta property="og:description" content="Markdownpedia is a site similar to Wikipedia but is written in Markdown. It is open-source, and you can help contribute to this site.">
-    <meta property="og:image" content="https://markdownpedia.tk/server/vital/markdown.png">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://markdownpedia.tk/" />
+        <meta property="og:title" content="Markdownpedia" />
+        <meta
+            property="og:description"
+            content="Markdownpedia is a site similar to Wikipedia but is written in Markdown. It is open-source, and you can help contribute to this site."
+        />
+        <meta property="og:image" content="https://markdownpedia.tk/server/vital/markdown.png" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="http://markdownpedia.tk/">
-    <meta property="twitter:title" content="Markdownpedia">
-    <meta property="twitter:description" content="Markdownpedia is a site similar to Wikipedia but is written in Markdown. It is open-source, and you can help contribute to this site.">
-    <meta property="twitter:image" content="https://markdownpedia.tk/server/vital/markdown.png">
-    
-    <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
-    <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-    <title>Markdownpedia</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-</head>
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="http://markdownpedia.tk/" />
+        <meta property="twitter:title" content="Markdownpedia" />
+        <meta
+            property="twitter:description"
+            content="Markdownpedia is a site similar to Wikipedia but is written in Markdown. It is open-source, and you can help contribute to this site."
+        />
+        <meta property="twitter:image" content="https://markdownpedia.tk/server/vital/markdown.png" />
 
-<body>
-    <div class="nav">
-        <ul>
-            <li><a href="javascript: window.location = '/';"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-            <li><a href="javascript: window.location = '/pages/editor';"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editor</a></li>
-            <li><a href="https://github.com/mamamia5x/markdownpedia/discussions"><i class="fa fa-user-plus" aria-hidden="true"></i> Forum</a></li>
-            <li><a href="https://status.markdownpedia.tk/"><i class="fa fa-signal" aria-hidden="true"></i> Status</a></li>
-            <li><a href="https://github.com/mamamia5x/markdownpedia"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
-            <li class="search"><input type="text" placeholder=" Search Markdownpedia" class="searchbox"><a href="#" onclick="changeSearchUrl();"> <i class="fa fa-search" aria-hidden="true"></i></a></li>
+        <!-- ===== FAVICON ===== -->
+        <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
+
+        <!-- ===== GOOGLE FONTS ===== -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet" />
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css" />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous"
+        />
+
+        <!-- Main Styles -->
+        <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css" />
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>
+            hljs.initHighlightingOnLoad();
+        </script>
+    </head>
+    <body>
+        <div class="nav">
+            <ul>
+                <li>
+                    <a href="javascript: window.location = '/';">
+                        <i class="fa fa-home" aria-hidden="true"></i> Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="javascript: window.location = '/pages/editor';">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        Editor
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/mamamia5x/markdownpedia/discussions">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i> Forum
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://status.markdownpedia.tk/">
+                        <i class="fa fa-signal" aria-hidden="true"></i> Status
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/mamamia5x/markdownpedia">
+                        <i class="fa fa-github" aria-hidden="true"></i> GitHub
+                    </a>
+                </li>
+
+                <li class="search">
+                    <input type="text" placeholder=" Search Markdownpedia" class="searchbox" />
+                    <a href="#" onclick="changeSearchUrl();">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <br />
+
+        <ul id="listOfItems">
+            {list}
         </ul>
-    </div>
-    <br>
-    <ul id="listOfItems">
-      {list}
-</ul>
-<style>
-  #listOfItems {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  /* Remove default list styling */
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
 
-#listOfItems li a {
-  border: 1px solid #ddd; /* Add a border to all links */
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6; /* Grey background color */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove default text underline */
-  font-size: 18px; /* Increase the font-size */
-  color: black; /* Add a black text color */
-  display: block; /* Make it into a block element to fill the whole list */
-}
+        <style>
+            #listOfItems {
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                /* Remove default list styling */
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
 
-#listOfItems li a:hover:not(.header) {
-  background-color: #eee; /* Add a hover effect to all links, except for headers */
-}
-</style>
-  <script>
-    var source = document.getElementById("icon").href.replace("markdownpedia.tk", window.location.hostname);
-    document.getElementById("icon").href = source;
-    source = document.getElementById("style").href.replace("markdownpedia.tk", window.location.hostname);
-    document.getElementById("style").href = source;
-    var tag = document.createElement("script");
-    var things = "https://markdownpedia.tk/server/vital/search.js";
-    tag.src = things.replace("markdownpedia.tk", window.location.hostname);
-    document.getElementsByTagName("head")[0].appendChild(tag);
-  </script>
-  <script>
-    myFunction();
-    //This is the actual searching script
-    function myFunction() {
-  // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
-  var url_string = window.location.href;
-  var url = new URL(url_string);
-  input = url.searchParams.get("query");
-  filter = input.toUpperCase();
-  ul = document.getElementById("listOfItems");
-  li = ul.getElementsByTagName('li');
+            #listOfItems li a {
+                border: 1px solid #ddd; /* Add a border to all links */
+                margin-top: -1px; /* Prevent double borders */
+                background-color: #f6f6f6; /* Grey background color */
+                padding: 12px; /* Add some padding */
+                text-decoration: none; /* Remove default text underline */
+                font-size: 18px; /* Increase the font-size */
+                color: black; /* Add a black text color */
+                display: block; /* Make it into a block element to fill the whole list */
+            }
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
-    }
-  </script>
+            #listOfItems li a:hover:not(.header) {
+                background-color: #eee; /* Add a hover effect to all links, except for headers */
+            }
+        </style>
 
-</body>
+        <script>
+            var source = document.getElementById('icon').href.replace('markdownpedia.tk', window.location.hostname);
 
+            document.getElementById('icon').href = source;
+            source = document.getElementById('style').href.replace('markdownpedia.tk', window.location.hostname);
+            document.getElementById('style').href = source;
+
+            var tag = document.createElement('script');
+            var things = 'https://markdownpedia.tk/server/vital/search.js';
+
+            tag.src = things.replace('markdownpedia.tk', window.location.hostname);
+
+            document.getElementsByTagName('head')[0].appendChild(tag);
+        </script>
+
+        <script>
+            myFunction();
+
+            //This is the actual searching script
+            function myFunction() {
+                // Declare variables
+                var input, filter, ul, li, a, i, txtValue;
+                var url_string = window.location.href;
+                var url = new URL(url_string);
+
+                input = url.searchParams.get('query');
+                filter = input.toUpperCase();
+                ul = document.getElementById('listOfItems');
+                li = ul.getElementsByTagName('li');
+
+                // Loop through all list items, and hide those who don't match the search query
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName('a')[0];
+                    txtValue = a.textContent || a.innerText;
+
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = '';
+                    } else {
+                        li[i].style.display = 'none';
+                    }
+                }
+            }
+        </script>
+    </body>
 </html>
