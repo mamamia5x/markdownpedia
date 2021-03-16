@@ -1,206 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Markdownpedia - Editor</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta
-            name="description"
-            content="Markdownpedia is a site similar to Wikipedia but is written in Markdown. It is open-source, and you can help contribute to this site."
-        />
+<html>
+  <head>
+    <title>Markdownpedia</title>
+    <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
+    <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="nav">
+        <ul>
+            <li><a href="javascript: window.location = '/';"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="javascript: window.location = '/server/vital/editor';"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editor</a></li>
+            <li><a href="https://github.com/mamamia5x/markdownpedia/discussions"><i class="fa fa-user-plus" aria-hidden="true"></i> Forum</a></li>
+            <li><a href="https://status.markdownpedia.tk/"><i class="fa fa-signal" aria-hidden="true"></i> Status</a></li>
+            <li><a href="https://github.com/mamamia5x/markdownpedia"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></li>
+            <li class="search"><input type="text" placeholder=" Search Markdownpedia" class="searchbox"><a href="#" onclick="changeSearchUrl();"> <i class="fa fa-search" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+    <br>
+    <div style="width: 100%;">
 
-        <!-- ===== FAVICON ===== -->
-        <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/MDP.png" />
-
-        <!-- ===== GOOGLE FONTS ===== -->
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet" />
-
-        <!-- ===== CSS ===== -->
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/default.min.css" />
-        <!-- Font Awesome -->
-        <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-            crossorigin="anonymous"
-        />
-
-        <!-- Main Styles -->
-        <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css" />
-
-        <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
-    </head>
-    <body>
-        <div class="nav">
-            <ul>
-                <li>
-                    <a href="javascript: window.location = '/';">
-                        <i class="fa fa-home" aria-hidden="true"></i> Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="javascript: window.location = '/pages/editor';">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        Editor
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://github.com/mamamia5x/markdownpedia/discussions">
-                        <i class="fa fa-user-plus" aria-hidden="true"></i> Forum
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://status.markdownpedia.tk/">
-                        <i class="fa fa-signal" aria-hidden="true"></i> Status
-                    </a>
-                </li>
-
-                <li>
-                    <a href="https://github.com/mamamia5x/markdownpedia">
-                        <i class="fa fa-github" aria-hidden="true"></i> GitHub
-                    </a>
-                </li>
-
-                <li class="search">
-                    <input type="text" placeholder=" Search Markdownpedia" class="searchbox" />
-                    <a href="#" onclick="changeSearchUrl();">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </a>
-                </li>
-            </ul>
+      <div id="content">
+        <div style="float:left; width: 47.5%;">
+          <textarea rows='10' cols="60%" placeholder="click to enter text" class="editor" onkeyup="markdown(this.value)" id="text"    ></textarea>
+          <table>
+            <tr>
+              <td><input type="text" id="flname" placeholder="Enter Filename"></input><button  id="save">Save</button></center></td>
+            </tr>
+            <tr>
+              <td><input type="file" id="fileLoad"></input></td>
+            </tr>
+            <tr>
+              <td><button id="open">Open</button></td>
+            </tr>
+          </table>
         </div>
+      </div>
+      <div style="position: absolute; left: 49.5%; padding: 0px 0.5%; background-color: #eaecef; height: 98vh;"></div>
+      <div style="float:right; width: 49%;">
+        <div class="markdown" id="markdown"></div>
+      </div>
 
-        <br />
+    </div>
+    <div style="clear:both">
+    </div>
 
-        <div style="width: 100%">
-            <div style="float: left; width: 47.5%" id="content">
-                <div style="float: left; width: 47.5%">
-                    <textarea
-                        rows="10"
-                        cols="60%"
-                        placeholder="click to enter text"
-                        class="editor"
-                        onkeyup="markdown(this.value)"
-                        id="text"
-                    ></textarea>
+    <script>
+      // button Eventlistener to listen to save button
+    var btn = document.getElementById("save");
+    btn.onclick = function save(){
+      event.preventDefault();
 
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="text" id="flname" placeholder="Enter Filename" />
+      //getting the value/content of text area
+      var content = document.querySelector("#text").value;
 
-                                <button id="save">Save</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="file" id="fileLoad" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <button id="open">Open</button>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div
-                style="position: absolute; left: 49.5%; padding: 0px 0.5%; background-color: #eaecef; height: 98vh"
-            ></div>
-            <div style="float: right; width: 49%">
-                <div class="markdown" id="markdown"></div>
-            </div>
-        </div>
-        <div style="clear: both"></div>
-        <script>
-            // button Eventlistener to listen to save button
-            var btn = document.getElementById('save');
-            btn.onclick = function save() {
-                event.preventDefault();
+      //Blob object which is a kind of data type holding the data to store in a file
+      //it is responsible for holding data
+      var blob= new Blob([content],{type:"text/markdown"});
 
-                //getting the value/content of text area
-                var content = document.querySelector('#text').value;
+      //I guess its the url of the page i.e the text file of the content :)
+      var saveUrl = window.URL.createObjectURL(blob);
+      
 
-                //Blob object which is a kind of data type holding the data to store in a file
-                //it is responsible for holding data
-                var blob = new Blob([content], { type: 'text/markdown' });
+      //getting the file name fro the text field
+      var fileName= document.getElementById("flname").value;
 
-                //I guess its the url of the page i.e the text file of the content :)
-                var saveUrl = window.URL.createObjectURL(blob);
+      //Link Creation for the download opeartion (Not Sure)
+      var downloadEle = document.createElement('a');
+      downloadEle.download=fileName;
+      downloadEle.innerHTML = "Download FIle";
+      downloadEle.href=saveUrl;
+      downloadEle.onclick= destroyClickedElement;
+      downloadEle.style.display="none"
+      document.body.appendChild(downloadEle);
+      downloadEle.click();
+    }
 
-                //getting the file name fro the text field
-                var fileName = document.getElementById('flname').value;
+    function destroyClickedElement(event){
+      document.body.removeChild(event.target);
+    }
 
-                //Link Creation for the download opeartion (Not Sure)
-                var downloadEle = document.createElement('a');
+    //button for selecting the file to open from local device/machine
+    var btn2=document.querySelector('#open');
+    btn2.onclick=function fileOpen(){
+      //getting the file to read
+      var fileToRead = document.getElementById('fileLoad').files[0];
+      var fileReader = new FileReader();
+      //the file reader
+      fileReader.onload = function(event){
+      //geting the text content 
+      var filetext = event.target.result;
+      //storing/displaying the textarea 
+      document.getElementById("text").value= filetext;
+      //calling the function to convert the data from the localfile
+      markdown(filetext);
+      };
 
-                downloadEle.download = fileName;
-                downloadEle.innerHTML = 'Download FIle';
-                downloadEle.href = saveUrl;
-                downloadEle.onclick = destroyClickedElement;
-                downloadEle.style.display = 'none';
+      fileReader.readAsText(fileToRead,"UTF-8");
+    }
 
-                document.body.appendChild(downloadEle);
 
-                downloadEle.click();
-            };
-            function destroyClickedElement(event) {
-                document.body.removeChild(event.target);
-            }
-
-            //button for selecting the file to open from local device/machine
-
-            var btn2 = document.querySelector('#open');
-
-            btn2.onclick = function fileOpen() {
-                //getting the file to read
-                var fileToRead = document.getElementById('fileLoad').files[0];
-                var fileReader = new FileReader();
-
-                //the file reader
-                fileReader.onload = function (event) {
-                    //geting the text content
-                    var filetext = event.target.result;
-
-                    //storing/displaying the textarea
-                    document.getElementById('text').value = filetext;
-
-                    //calling the function to convert the data from the localfile
-                    markdown(filetext);
-                };
-
-                fileReader.readAsText(fileToRead, 'UTF-8');
-            };
-
-            var source = document.getElementById('icon').href.replace('markdownpedia.tk', window.location.hostname);
-
-            document.getElementById('icon').href = source;
-            source = document.getElementById('style').href.replace('markdownpedia.tk', window.location.hostname);
-            document.getElementById('style').href = source;
-
-            var tag = document.createElement('script');
-            var things = 'https://markdownpedia.tk/server/vital/search.js';
-
-            tag.src = things.replace('markdownpedia.tk', window.location.hostname);
-            document.getElementsByTagName('head')[0].appendChild(tag);
-
-            function markdown(text) {
-                var converter = new showdown.Converter({
-                    tables: 'true',
-                    simplifiedAutoLink: 'true',
-                });
-
-                document.getElementById('markdown').innerHTML = converter.makeHtml(text);
-
-                document.querySelectorAll('code').forEach((block) => {
-                    hljs.highlightBlock(block);
-                });
-            }
-        </script>
-    </body>
+    var source = document.getElementById("icon").href.replace("markdownpedia.tk", window.location.hostname);
+    document.getElementById("icon").href = source;
+    source = document.getElementById("style").href.replace("markdownpedia.tk", window.location.hostname);
+    document.getElementById("style").href = source;
+    var tag = document.createElement("script");
+    var things = "https://markdownpedia.tk/server/vital/search.js";
+    tag.src = things.replace("markdownpedia.tk", window.location.hostname);
+    document.getElementsByTagName("head")[0].appendChild(tag);
+      function markdown(text){
+        var converter = new showdown.Converter({tables: 'true', simplifiedAutoLink: 'true'});
+        document.getElementById("markdown").innerHTML = converter.makeHtml(text);
+        document.querySelectorAll('code').forEach(block => {
+          hljs.highlightBlock(block);
+        });
+      }
+    </script>
+  </body>
 </html>
