@@ -22,6 +22,7 @@
     "dependencies": {
         "express": "^4.17.1",
         "fs-extra": "^9.1.0",
+        "pdfmake": "^0.1.71",
         "readdirp": "^3.5.0",
         "showdown": "^1.9.1"
     },
