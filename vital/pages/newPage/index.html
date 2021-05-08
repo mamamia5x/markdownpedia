@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link id="icon" rel="icon" type="image/png" href="https://markdownpedia.tk/server/vital/markdown.png" />
+    <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/stackoverflow-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>From Wikipedia&comma; the free encyclopedia</title>
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    </style>
+    <style>
+      .task-list-item {
+        list-style-type: none;
+      }
+
+      .task-list-item-checkbox {
+        margin-left: -20px;
+        vertical-align: middle;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="pdf.js"></script>
+  </head>
+  <body class="vscode-body vscode-light">
+    <div class="nav">
+      <ul>
+        <li><a href="javascript: window.location = '/';"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><a href="javascript: window.location = '/server/vital/editor';"><i class="fa fa-pencil-square-o"
+              aria-hidden="true"></i> Editor</a></li>
+        <li><a href="https://github.com/mamamia5x/markdownpedia/discussions"><i class="fa fa-user-plus"
+              aria-hidden="true"></i> Forum</a></li>
+        <li><a href="https://status.markdownpedia.tk/"><i class="fa fa-signal" aria-hidden="true"></i> Status</a></li>
+        <li><a href="https://github.com/mamamia5x/markdownpedia"><i class="fa fa-github" aria-hidden="true"></i>
+            GitHub</a></li>
+        <li> <a href="javascript:htmlToPDF();">Convert to PDF</a></li>
+
+        <li class="search"><input type="text" placeholder=" Search Markdownpedia" class="searchbox"><a href="#"
+            onclick="changeSearchUrl();"> <i class="fa fa-search" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+    <br>
+    <div id="content" style="width: 100%;">
+      <h1 id="markdown">Markdown</h1>
+      <h5 id="from-wikipedia-the-free-encyclopedia">From Wikipedia, the free encyclopedia</h5>
+      <p><em>For the marketing term, see <a href="https://en.wikipedia.org/wiki/Price_markdown">Price markdown</a>.</em>
+      </p>
+      <p><strong>Markdown</strong> is a <a href="https://en.wikipedia.org/wiki/Lightweight_markup_language">lightweight
+          markup language</a> for creating <a href="https://en.wikipedia.org/wiki/Formatted_text">formatted text</a> using
+        a <a href="https://en.wikipedia.org/wiki/Text_editor">plain-text editor</a>. <a
+          href="https://en.wikipedia.org/wiki/John_Gruber">John Gruber</a> and <a
+          href="https://en.wikipedia.org/wiki/Aaron_Swartz">Aaron Swartz</a> created Markdown in 2004 as a <a
+          href="https://en.wikipedia.org/wiki/Markup_language">markup language</a> that is appealing to human readers in
+        its source code form. [<a href="http://daringfireball.net/projects/markdown/syntax#philosophy">9</a>] Markdown is
+        widely used in <a href="https://en.wikipedia.org/wiki/Blog">blogging</a>, <a
+          href="https://en.wikipedia.org/wiki/Instant_messaging">instant messaging</a>, <a
+          href="https://en.wikipedia.org/wiki/Online_forums">online forums</a>, <a
+          href="https://en.wikipedia.org/wiki/Collaborative_software">collaborative software</a>, <a
+          href="https://en.wikipedia.org/wiki/Documentation">documentation</a> pages, and <a
+          href="https://en.wikipedia.org/wiki/README">readme files</a>.</p>
+      <p>Since the initial description of Markdown [<a
+          href="https://daringfireball.net/2004/03/introducing_markdown">10</a>] contained ambiguities and unanswered
+        questions, the implementations that appeared over the years have subtle differences and many come with syntax
+        extensions.</p>
+      <h2 id="history">History</h2>
+      <hr>
+      <p>In 2002 <a href="https://en.wikipedia.org/wiki/Aaron_Swartz">Aaron Swartz</a> created <a
+          href="http://www.aaronsw.com/2002/atx/intro">atx</a>, &quot;the true structured text format&quot;. Swartz and <a
+          href="https://en.wikipedia.org/wiki/John_Gruber">John Gruber</a> then worked together to create the Markdown
+        language in 2004,[<a href="http://www.aaronsw.com/weblog/001189">2</a>][<a
+          href="https://web.archive.org/web/20040402182332/http://daringfireball.net/projects/markdown/">3</a>] with the
+        goal of enabling people &quot;to write using an easy-to-read and easy-to-write plain text format, optionally
+        convert it to structurally valid <a href="https://en.wikipedia.org/wiki/XHTML">XHTML</a> (or <a
+          href="https://en.wikipedia.org/wiki/HTML">HTML</a>)&quot;.[<a
+          href="https://web.archive.org/web/20040402182332/http://daringfireball.net/projects/markdown/">4</a>]</p>
+      <p>Its key design goal is readability that the language be readable as-is, without looking like it has been marked
+        up with tags or formatting instructions, [<a
+          href="http://daringfireball.net/projects/markdown/syntax#philosophy">9</a>] unlike text formatted with a <a
+          href="https://en.wikipedia.org/wiki/Markup_language">markup language</a>, such as <a
+          href="https://en.wikipedia.org/wiki/Rich_Text_Format">Rich Text Format</a> (RTF) or HTML, which have obvious
+        tags and formatting instructions. To this end, its main inspiration is the existing <a
+          href="https://en.wikipedia.org/wiki/Convention_(norm)">conventions</a> for marking up <a
+          href="https://en.wikipedia.org/wiki/Plain_text">plain text</a> in <a
+          href="https://en.wikipedia.org/wiki/Email">email</a>, though it also draws from earlier markup languages,
+        notably <a href="https://en.wikipedia.org/wiki/Setext">setext</a>, <a
+          href="https://en.wikipedia.org/wiki/Textile_(markup_language)">Textile</a>, and <a
+          href="https://en.wikipedia.org/wiki/ReStructuredText">reStructuredText</a>.[<a
+          href="http://daringfireball.net/projects/markdown/syntax#philosophy">9</a>]</p>
+      <p>Gruber wrote a <a href="https://en.wikipedia.org/wiki/Perl">Perl</a> script, <code>Markdown.pl</code>, which
+        converts marked-up text input to valid, <a
+          href="https://en.wikipedia.org/wiki/XML#Well-formedness_and_error-handling">well-formed</a> XHTML or HTML and
+        replaces angle brackets '<code>&lt;</code>' '<code>&gt;</code>' and <a
+          href="https://en.wikipedia.org/wiki/Ampersand">ampersands</a> '<code>&amp;</code>' with their corresponding <a
+          href="https://en.wikipedia.org/wiki/Character_entity_references">character entity references</a>. It can take
+        the role of a standalone script, a plugin for <a href="https://en.wikipedia.org/wiki/Blosxom">Blosxom</a> or a <a
+          href="https://en.wikipedia.org/wiki/Movable_Type">Movable Type</a>, or of a text filter for <a
+          href="https://en.wikipedia.org/wiki/BBEdit">BBEdit</a>.[<a
+          href="https://web.archive.org/web/20040402182332/http://daringfireball.net/projects/markdown/">4</a>]</p>
+      <h2 id="standardization">Standardization</h2>
+      <hr>
+      <p>Markdown has been characterised by an informal specification[<a
+          href="https://daringfireball.net/projects/markdown/syntax">11</a>] and a reference implementation for conversion
+        to HTML. Over time, many Markdown implementations have appeared. People developed these mostly driven by the need
+        for additional features on top of the base syntax—such as tables, footnotes, definition lists (technically HTML
+        description lists), and Markdown inside HTML blocks. The behavior of some of these diverges from the reference
+        implementation. At the same time, a number of ambiguities in the informal specification have attracted
+        attention.[<a href="https://github.github.com/gfm/#why-is-a-specneeded-">12</a>] These issues spurred the creation
+        of tools such as Babelmark [<a href="http://johnmacfarlane.net/babelmark2/">13</a>][<a
+          href="https://babelmark.github.io">14</a>] to compare the output of various implementations, [<a
+          href="http://johnmacfarlane.net/babelmark2/faq.html">15</a>] and an effort by some developers of Markdown
+        parsers for standardisation. However, Gruber has argued that complete standardization would be mistaken:
+        &quot;Different sites (and people) have different needs. No one syntax would make all happy.&quot;[<a
+          href="https://twitter.com/gruber/status/507670720886091776">16</a>]</p>
+      <p>In March 2016 two relevant informational Internet <a
+          href="https://en.wikipedia.org/wiki/Request_for_Comments">RFCs</a> were published:</p>
+      <ul>
+        <li><a href="https://tools.ietf.org/html/rfc7763">RFC 7763</a> introduced <a
+            href="https://en.wikipedia.org/wiki/MIME">MIME</a> type <code>text/markdown</code> with the original variant.
+        </li>
+        <li><a href="https://tools.ietf.org/html/rfc7764">RFC 7764</a> discussed and registered the variants <a
+            href="https://en.wikipedia.org/wiki/MultiMarkdown">MultiMarkdown</a>, GitHub Flavored Markdown (GFM), <a
+            href="https://en.wikipedia.org/wiki/Pandoc">Pandoc</a>, <a
+            href="https://en.wikipedia.org/wiki/Markdown#CommonMark">CommonMark</a>, and Markdown Extra among others.[<a
+            href="https://www.iana.org/assignments/markdown-variants/markdown-variants.xhtml">17</a>]</li>
+      </ul>
+      <h3 id="commonmark"><strong>CommonMark</strong></h3>
+      <p>From 2012, a group of people, including <a href="https://en.wikipedia.org/wiki/Jeff_Atwood">Jeff Atwood</a> and
+        <a href="https://en.wikipedia.org/wiki/John_MacFarlane_(philosopher)">John MacFarlane</a>, launched what Atwood
+        characterized as a standardization effort.[<a
+          href="http://www.codinghorror.com/blog/2012/10/the-future-of-markdown.html">20</a>] A community website now aims
+        to &quot;document various tools and resources available to document authors and developers, as well as
+        implementors of the various Markdown implementations&quot;.[<a href="https://markdown.github.io/">21</a>] In
+        September 2014, Gruber objected to the usage of &quot;Markdown&quot; in the name of this effort and it was
+        rebranded as a new dialect named CommonMark.[<a
+          href="http://blog.codinghorror.com/standard-markdown-is-now-common-markdown/">22</a>][<a
+          href="http://www.infoq.com/news/2014/09/markdown-commonmark">23</a>] <a
+          href="http://CommonMark.org">CommonMark.org</a> published several versions of a specification, reference
+        implementation, and test suite, and &quot;[plans] to announce a finalized 1.0 spec and test suite in
+        2019.&quot;[<a href="http://commonmark.org/">24</a>] No 1.0 spec has since been released as major issues still
+        remain unsolved.[<a
+          href="https://talk.commonmark.org/t/issues-we-mustresolve-before-1-0-release-6-remaining/1287">25</a>]
+        Nonetheless, the following sites and projects have adopted CommonMark: Discourse, GitHub, GitLab, Reddit, Qt,
+        Stack Exchange (Stack Overflow), and Swift.</p>
+      <h2 id="variants">Variants</h2>
+      <hr>
+      <p>Sites like <a href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>, <a
+          href="https://en.wikipedia.org/wiki/Bitbucket">Bitbucket</a>, <a
+          href="https://en.wikipedia.org/wiki/Reddit">Reddit</a>, <a
+          href="https://en.wikipedia.org/wiki/Diaspora_(social_network)">Diaspora</a>, <a
+          href="https://en.wikipedia.org/wiki/Stack_Exchange">Stack Exchange</a>, <a
+          href="https://en.wikipedia.org/wiki/OpenStreetMap">OpenStreetMap</a>, and <a
+          href="https://en.wikipedia.org/wiki/SourceForge">SourceForge</a> use variants of Markdown to facilitate
+        discussion between users. [<a href="https://github.github.com/gfm/">26</a>][<a
+          href="https://www.reddit.com/r/reddit.com/comments/6ewgt/reddit_markdown_primer_or_how_do_you_do_all_that/">27</a>][<a
+          href="https://stackoverflow.com/editing-help">28</a>][<a
+          href="http://sourceforge.net/p/forge/documentation/markdown_syntax/">29</a>] Depending on implementation, basic
+        inline <a href="https://en.wikipedia.org/wiki/HTML_tag">HTML tags</a> may be supported.[<a
+          href="https://daringfireball.net/projects/markdown/syntax#html">30</a>] Italic text may be implemented by
+        <code>_underscores_</code> and/or <code>*single-asterisks*</code>.[<a
+          href="https://www.markdownguide.org/basic-syntax/#italic">31</a>]</p>
+      <h3 id="github-flavored-markdown"><strong>GitHub Flavored Markdown</strong></h3>
+      <p>In 2017, GitHub released a formal specification of their GitHub Flavored Markdown (GFM) that is based on
+        CommonMark.[<a href="https://github.github.com/gfm/">26</a>] It is a <a
+          href="https://en.wikipedia.org/wiki/Superset">strict superset</a> of CommonMark, following its specification
+        exactly except for tables, strikethrough, autolinks and task lists, which GFM adds as extensions.[<a
+          href="https://githubengineering.com/a-formal-spec-for-github-markdown/">32</a>] GitHub also changed the parser
+        used on their sites accordingly, which required that some documents be changed. For instance, GFM now requires
+        that the <a href="https://en.wikipedia.org/wiki/Number_sign">hash symbol</a> that creates a heading be separated
+        from the heading text by a space character.</p>
+      <h3 id="markdown-extra"><strong>Markdown Extra</strong></h3>
+      <p>Markdown Extra is a <a href="https://en.wikipedia.org/wiki/Lightweight_markup_language">lightweight markup
+          language</a> based on Markdown implemented in <a href="https://en.wikipedia.org/wiki/PHP">PHP</a> (originally),
+        <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> and <a
+          href="https://en.wikipedia.org/wiki/Ruby_(programming_language)">Ruby</a>.[<a
+          href="https://michelf.ca/projects/php-markdown/extra">33</a>] It adds features not available with plain Markdown
+        syntax. Markdown Extra is supported in some <a
+          href="https://en.wikipedia.org/wiki/Content_management_system">content management systems</a> such as, for
+        example, <a href="https://en.wikipedia.org/wiki/Drupal">Drupal</a> [<a
+          href="https://drupal.org/project/markdowneditor">34</a>] and <a
+          href="https://en.wikipedia.org/wiki/TYPO3">TYPO3</a>.[<a
+          href="https://extensions.typo3.org/extension/markdown_content/">35</a>]</p>
+      <p>Markdown Extra adds the following features to Markdown:</p>
+      <ul>
+        <li>Markdown markup inside <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> blocks</li>
+        <li>Elements with id/class attribute</li>
+        <li>&quot;Fenced code blocks&quot; that span multiple lines of code</li>
+        <li>Tables [<a href="https://michelf.ca/projects/php-markdown/extra">36</a>]</li>
+        <li>Definition lists</li>
+        <li>Footnotes</li>
+        <li>Abbreviations</li>
+      </ul>
+      <h2 id="implementations">Implementations</h2>
+      <hr>
+      <p>Implementations of Markdown are available for over a dozen programming languages; in addition, many platforms and
+        frameworks support Markdown.[<a href="https://www.w3.org/community/markdown/wiki/MarkdownImplementations">37</a>]
+        For example, Markdown plugins exist for every major blogging platform.[<a
+          href="https://arstechnica.com/information-technology/2014/10/markdown-throwdown-what-happens-when-foss-software-gets-corporate-backing/">38</a>]
+      </p>
+      <p>While Markdown is a minimal markup language and is read and edited with a normal text editor, there are specially
+        designed editors that preview the files with styles, which are available for all major platforms. Many general
+        purpose text and code editors have syntax highlighting plugins for Markdown built into them or available as
+        optional download. Editors may feature a side-by-side preview window or render the code directly in a <a
+          href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> fashion.</p>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/JotterPad">JotterPad</a> an online WYSIWYG editor that supports
+          Markdown and fountain <a href="https://blog.jotterpad.app/why-need-wysiwyg-markdown-fountain-editor/">39</a>
+        </li>
+        <li><a href="https://en.wikipedia.org/wiki/Doxygen">Doxygen</a> a source code documentation generator which
+          supports Markdown with extra features [<a href="http://doxygen.nl/manual/markdown.html">40</a>]</li>
+        <li><a href="https://en.wikipedia.org/wiki/RStudio">RStudio</a> an <a
+            href="https://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a> for <a
+            href="https://en.wikipedia.org/wiki/R_(programming_language)">R</a>. It provides a <a
+            href="https://en.wikipedia.org/wiki/C%2B%2B">C++</a> <a
+            href="https://en.wikipedia.org/wiki/Wrapper_function">wrapper function</a> for a markdown variant called
+          sundown [<a href="https://github.com/rstudio/rstudio/blob/master/src/cpp/core/markdown/Markdown.cpp">41</a>]
+        </li>
+        <li>GitHub Flavored Markdown (GFM) ignores underscores in words, and adds <a
+            href="https://en.wikipedia.org/wiki/Syntax_highlighting">syntax highlighting</a>, <a
+            href="https://en.wikipedia.org/wiki/Task_list">task lists</a>, [<a
+            href="https://help.github.com/articles/writing-on-github">42</a>] and tables [<a
+            href="https://github.github.com/gfm/">26</a>]</li>
+        <li>Discount a <a href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> implementation [<a
+            href="https://www.pell.portland.or.us/~orc/Code/discount/">43</a>][<a
+            href="https://github.com/Orc/discount">44</a>]</li>
+        <li>MarkAPL a converter written in Dyalog <a
+            href="https://en.wikipedia.org/wiki/APL_(programming_language)">APL</a>. It supports fenced blocks, smart
+          typography, link references, and special attributes, and can generate a table of contents [<a
+            href="https://github.com/aplteam/MarkAPL">45</a>]</li>
+        <li>PHP Markdown a library package that includes the PHP Markdown parser and its sibling PHP Markdown Extra with
+          additional features [<a href="https://michelf.ca/projects/php-markdown/">46</a>]</li>
+        <li>Markdig a .NET library that follows the CommonMark specifications, and includes a collection of extensions and
+          the ability for the user to create their own [<a href="https://github.com/lunet-io/markdig">47</a>]</li>
+        <li>Showdown [<a href="https://showdownjs.com/">48</a>] and Smartdown [<a href="https://smartdown.io/">49</a>] —
+          Markdown renderers in JavaScript</li>
+        <li><a href="http://hackmd.io">hackmd.io</a> an online Markdown editor that supports Markdown with extra features
+          [<a href="https://hackmd.io/c/tutorials/%2Fs%2Ffeatures">50</a>]</li>
+        <li>gomarkdown Markdown parser and HTML renderer in Go [<a href="https://github.com/gomarkdown/markdown">51</a>]
+        </li>
+        <li>Markdeep, with support for calendars, equations and diagrams [<a
+            href="https://casual-effects.com/markdeep/">52</a>]</li>
+      </ul>
+    </div>
+  </body>
+</html>
