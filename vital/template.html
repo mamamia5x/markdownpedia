@@ -47,7 +47,7 @@
         />
 
         <!-- Main Styles -->
-        <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css" />
+        <link id="style" rel="stylesheet" href="public/style.css" />
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>
@@ -62,7 +62,6 @@
                         <i class="fa fa-home" aria-hidden="true"></i> Home
                     </a>
                 </li>
-
                 <li>
                     <a href="javascript: window.location = '/pages/editor';">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
@@ -81,13 +80,11 @@
                         <i class="fa fa-signal" aria-hidden="true"></i> Status
                     </a>
                 </li>
-
                 <li>
                     <a href="https://github.com/mamamia5x/markdownpedia">
                         <i class="fa fa-github" aria-hidden="true"></i> GitHub
                     </a>
                 </li>
-
                 <li class="search">
                     <input type="text" placeholder=" Search Markdownpedia" class="searchbox" />
                     <a href="#" onclick="changeSearchUrl();">
@@ -96,10 +93,9 @@
                 </li>
             </ul>
         </div>
-
         <div class="markdown">{markdown}</div>
 
-        <script>
+        <!-- <script>
             var source = document.getElementById('icon').href.replace('markdownpedia.tk', window.location.hostname);
 
             document.getElementById('icon').href = source;
@@ -112,6 +108,9 @@
             tag.src = things.replace('markdownpedia.tk', window.location.hostname);
 
             document.getElementsByTagName('head')[0].appendChild(tag);
-        </script>
+        </script> -->
+        <div class="testclass">
+            This is A text in testclass
+        </div>
     </body>
 </html>
