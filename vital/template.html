@@ -92,11 +92,34 @@
                     </a>
                 </li>
             </ul>
+            <div class="theme-switch">
+                <input type="checkbox" name="" id="theme-switcher-button">
+                <label for="theme-switcher-button" class="theme-switcher">
+                    <div class="theme-switch-toggle">
+
+                    </div>
+                </label>
+            </div>
         </div>
         <div class="markdown">{markdown}</div>
 
-        <!-- <script>
-            var source = document.getElementById('icon').href.replace('markdownpedia.tk', window.location.hostname);
+        <script>
+            const themeSwitch = document.getElementById('theme-switcher-button');
+            themeSwitch.addEventListener('click', toggleTheme);
+            function toggleTheme() {
+                if (themeSwitch.checked) {
+                  darkThemeOn();
+                } else {
+                  darkThemeOff();
+                }
+            }
+            function darkThemeOn() {
+              document.body.classList.add("darkmode");
+            }
+            function darkThemeOff() {
+                document.body.classList.remove("darkmode");
+              }
+            {{/*  var source = document.getElementById('icon').href.replace('markdownpedia.tk', window.location.hostname);
 
             document.getElementById('icon').href = source;
             source = document.getElementById('style').href.replace('markdownpedia.tk', window.location.hostname);
@@ -107,10 +130,7 @@
 
             tag.src = things.replace('markdownpedia.tk', window.location.hostname);
 
-            document.getElementsByTagName('head')[0].appendChild(tag);
-        </script> -->
-        <div class="testclass">
-            This is A text in testclass
-        </div>
+            document.getElementsByTagName('head')[0].appendChild(tag);  */}}
+        </script>
     </body>
 </html>
