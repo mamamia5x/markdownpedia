@@ -72,6 +72,16 @@ body {
   cursor: pointer;
 }
 
+.theme-switch-toggle {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 3.5px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  position: absolute;
+  transition: all 250ms ease-in-out;
+}
+
 .theme-switcher::before {
   content: 'Light Mode On';
   color: white;
@@ -85,19 +95,10 @@ body {
 
 #theme-switcher-button:checked ~ label .theme-switch-toggle {
   transform: translatex(2rem);
-  transition: all 250ms ease-in-out;
 }
 
 #theme-switcher-button:checked ~ .theme-switcher::before {
   content: 'Dark Mode On';
-}
-
-.theme-switch-toggle {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin: 3.5px;
-  border-radius: 50%;
-  background: var(--clr-accent);
 }
 
 .search {
