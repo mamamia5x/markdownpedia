@@ -2,13 +2,14 @@
   --clr-background: rgb(255, 255, 255);
   --clr-navblue: #1672d9;
   --clr-ahover: #000000;
-  --clr-accent: #00818a;
+  --clr-accent: #1672d9;
 }
 
 .darkmode {
   --clr-background: #283149;
   --clr-navblue: #404b69;
   --clr-ahover: #000000;
+  --clr-accent: #00818a;
 }
 
 body {
@@ -55,7 +56,7 @@ body {
 .theme-switch {
   display: flex;
   justify-content: flex-end;
-  margin: 1.7rem 15rem;
+  margin: 1.2rem 17rem;
 }
 
 #theme-switcher-button {
@@ -69,6 +70,34 @@ body {
   background: var(--clr-background);
   border: 2px solid var(--clr-accent);
   cursor: pointer;
+}
+
+.theme-switcher::before {
+  content: 'Light Mode On';
+  color: white;
+  position: absolute;
+  display: inline-block;
+  width: 12rem;
+  right: 20px;
+  margin-top: 5px;
+  margin-right: 50px;
+}
+
+#theme-switcher-button:checked ~ label .theme-switch-toggle {
+  transform: translatex(2rem);
+  transition: all 250ms ease-in-out;
+}
+
+#theme-switcher-button:checked ~ .theme-switcher::before {
+  content: 'Dark Mode On';
+}
+
+.theme-switch-toggle {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 3.5px;
+  border-radius: 50%;
+  background: var(--clr-accent);
 }
 
 .search {
