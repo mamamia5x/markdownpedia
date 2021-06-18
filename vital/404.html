@@ -47,7 +47,7 @@
         />
 
         <!-- Main Styles -->
-        <link id="style" rel="stylesheet" href="https://markdownpedia.tk/server/vital/style.css" />
+        <link id="style" rel="stylesheet" href="public/style.css" />
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>
@@ -62,7 +62,6 @@
                         <i class="fa fa-home" aria-hidden="true"></i> Home
                     </a>
                 </li>
-
                 <li>
                     <a href="javascript: window.location = '/pages/editor';">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
@@ -81,13 +80,11 @@
                         <i class="fa fa-signal" aria-hidden="true"></i> Status
                     </a>
                 </li>
-
                 <li>
                     <a href="https://github.com/mamamia5x/markdownpedia">
                         <i class="fa fa-github" aria-hidden="true"></i> GitHub
                     </a>
                 </li>
-
                 <li class="search">
                     <input type="text" placeholder=" Search Markdownpedia" class="searchbox" />
                     <a href="#" onclick="changeSearchUrl();">
@@ -95,14 +92,34 @@
                     </a>
                 </li>
             </ul>
+            <div class="theme-switch">
+                <input type="checkbox" name="" id="theme-switcher-button">
+                <label for="theme-switcher-button" class="theme-switcher">
+                    <div class="theme-switch-toggle"></div>
+                </label>
+            </div>
         </div>
-
         <div class="markdown"><h1 id="404">404</h1>
 <p>That page isn't found, go to <a href="https://markdownpedia.tk">home</a>?<br />
 If this is a bug, please share it <a href="https://github.com/mamamia5x/markdownpedia/issues">here</a>.</p></div>
 
-        <script>
-            var source = document.getElementById('icon').href.replace('markdownpedia.tk', window.location.hostname);
+        <!-- <script>
+            const themeSwitch = document.getElementById('theme-switcher-button');
+            themeSwitch.addEventListener('click', toggleTheme);
+            function toggleTheme() {
+                if (themeSwitch.checked) {
+                  darkThemeOn();
+                } else {
+                  darkThemeOff();
+                }
+            }
+            function darkThemeOn() {
+              document.body.classList.add("darkmode");
+            }
+            function darkThemeOff() {
+                document.body.classList.remove("darkmode");
+              }
+            {{/*  var source = document.getElementById('icon').href.replace('markdownpedia.tk', window.location.hostname);
 
             document.getElementById('icon').href = source;
             source = document.getElementById('style').href.replace('markdownpedia.tk', window.location.hostname);
@@ -113,7 +130,7 @@ If this is a bug, please share it <a href="https://github.com/mamamia5x/markdown
 
             tag.src = things.replace('markdownpedia.tk', window.location.hostname);
 
-            document.getElementsByTagName('head')[0].appendChild(tag);
-        </script>
+            document.getElementsByTagName('head')[0].appendChild(tag);  */}}
+        </script> -->
     </body>
 </html>
